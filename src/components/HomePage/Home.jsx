@@ -13,7 +13,7 @@ const Home = () => {
                         <div class="row tn-slider">
                             <div class="col-md-6">
                                 <div class="tn-img">
-                                    <img src="img/news-450x350-1.jpg" />
+                                    <img src="img/news-450x350-1.jpg" alt="news1"/>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
@@ -21,7 +21,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="tn-img">
-                                    <img src="img/news-450x350-2.jpg" />
+                                    <img src="img/news-450x350-2.jpg" alt="news2" />
                                     <div class="tn-title">
                                         <a  href="/#">Integer hendrerit elit eget purus sodales maximus</a>
                                     </div>
@@ -33,7 +33,7 @@ const Home = () => {
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="tn-img">
-                                    <img src="img/news-350x223-1.jpg" />
+                                    <img src="img/news-350x223-1.jpg" alt="news3" />
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -41,7 +41,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="tn-img">
-                                    <img src="img/news-350x223-2.jpg" />
+                                    <img src="img/news-350x223-2.jpg" alt="news3" />
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -49,7 +49,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="tn-img">
-                                    <img src="img/news-350x223-3.jpg" />
+                                    <img src="img/news-350x223-3.jpg" alt="news4" />
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -57,7 +57,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="tn-img">
-                                    <img src="img/news-350x223-4.jpg" />
+                                    <img src="img/news-350x223-4.jpg" alt="news5" />
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -80,7 +80,7 @@ const Home = () => {
                         <div class="row cn-slider">
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-1.jpg" />
+                                    <img src="img/news-350x223-1.jpg" alt="news6" />
                                     <div class="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -88,7 +88,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-2.jpg" />
+                                    <img src="img/news-350x223-2.jpg" alt="news7" />
                                     <div class="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -96,7 +96,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-3.jpg" />
+                                    <img src="img/news-350x223-3.jpg" alt="news8" />
                                     <div class="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -109,7 +109,7 @@ const Home = () => {
                         <div class="row cn-slider">
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-4.jpg" />
+                                    <img src="img/news-350x223-4.jpg" alt="news9" />
                                     <div class="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -117,7 +117,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-5.jpg" />
+                                    <img src="img/news-350x223-5.jpg" alt="news10" />
                                     <div class="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -125,7 +125,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-1.jpg" />
+                                    <img src="img/news-350x223-1.jpg" alt="news11" />
                                     <div class="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -147,7 +147,7 @@ const Home = () => {
                         <div class="row cn-slider">
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-5.jpg" />
+                                    <img src="img/news-350x223-5.jpg" alt="news1" />
                                     <div class="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -155,7 +155,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-4.jpg" />
+                                    <img src="img/news-350x223-4.jpg" alt="news1" />
                                     <div class="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -163,7 +163,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-3.jpg" />
+                                    <img src="img/news-350x223-3.jpg" alt="news1" />
                                     <div class="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -176,7 +176,7 @@ const Home = () => {
                         <div class="row cn-slider">
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-2.jpg" />
+                                    <img src="img/news-350x223-2.jpg" alt="news1" />
                                     <div class="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -184,7 +184,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-1.jpg" />
+                                    <img src="img/news-350x223-1.jpg" alt="news1" />
                                     <div class="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -192,7 +192,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="img/news-350x223-3.jpg" />
+                                    <img src="img/news-350x223-3.jpg" alt="news1" />
                                     <div class="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -226,7 +226,7 @@ const Home = () => {
                             <div id="featured" class="container tab-pane active">
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-1.jpg" />
+                                        <img src="img/news-350x223-1.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -234,7 +234,7 @@ const Home = () => {
                                 </div>
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-2.jpg" />
+                                        <img src="img/news-350x223-2.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -242,7 +242,7 @@ const Home = () => {
                                 </div>
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-3.jpg" />
+                                        <img src="img/news-350x223-3.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -252,7 +252,7 @@ const Home = () => {
                             <div id="popular" class="container tab-pane fade">
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-4.jpg" />
+                                        <img src="img/news-350x223-4.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -260,7 +260,7 @@ const Home = () => {
                                 </div>
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-5.jpg" />
+                                        <img src="img/news-350x223-5.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -268,7 +268,7 @@ const Home = () => {
                                 </div>
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-1.jpg" />
+                                        <img src="img/news-350x223-1.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -278,7 +278,7 @@ const Home = () => {
                             <div id="latest" class="container tab-pane fade">
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-2.jpg" />
+                                        <img src="img/news-350x223-2.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -286,7 +286,7 @@ const Home = () => {
                                 </div>
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-3.jpg" />
+                                        <img src="img/news-350x223-3.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -294,7 +294,7 @@ const Home = () => {
                                 </div>
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-4.jpg" />
+                                        <img src="img/news-350x223-4.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -321,7 +321,7 @@ const Home = () => {
                             <div id="m-viewed" class="container tab-pane active">
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-5.jpg" />
+                                        <img src="img/news-350x223-5.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -329,7 +329,7 @@ const Home = () => {
                                 </div>
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-4.jpg" />
+                                        <img src="img/news-350x223-4.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -337,7 +337,7 @@ const Home = () => {
                                 </div>
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-3.jpg" />
+                                        <img src="img/news-350x223-3.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -347,7 +347,7 @@ const Home = () => {
                             <div id="m-read" class="container tab-pane fade">
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-2.jpg" />
+                                        <img src="img/news-350x223-2.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -355,7 +355,7 @@ const Home = () => {
                                 </div>
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-1.jpg" />
+                                        <img src="img/news-350x223-1.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -363,7 +363,7 @@ const Home = () => {
                                 </div>
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-3.jpg" />
+                                        <img src="img/news-350x223-3.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -373,7 +373,7 @@ const Home = () => {
                             <div id="m-recent" class="container tab-pane fade">
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-4.jpg" />
+                                        <img src="img/news-350x223-4.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -381,7 +381,7 @@ const Home = () => {
                                 </div>
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-5.jpg" />
+                                        <img src="img/news-350x223-5.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -389,7 +389,7 @@ const Home = () => {
                                 </div>
                                 <div class="tn-news">
                                     <div class="tn-img">
-                                        <img src="img/news-350x223-1.jpg" />
+                                        <img src="img/news-350x223-1.jpg" alt="news1" />
                                     </div>
                                     <div class="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
@@ -410,7 +410,7 @@ const Home = () => {
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mn-img">
-                                    <img src="img/news-350x223-1.jpg" />
+                                    <img src="img/news-350x223-1.jpg" alt="news1" />
                                     <div class="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -418,7 +418,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-4">
                                 <div class="mn-img">
-                                    <img src="img/news-350x223-2.jpg" />
+                                    <img src="img/news-350x223-2.jpg" alt="news1" />
                                     <div class="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -426,7 +426,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-4">
                                 <div class="mn-img">
-                                    <img src="img/news-350x223-3.jpg" />
+                                    <img src="img/news-350x223-3.jpg" alt="news1" />
                                     <div class="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -434,7 +434,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-4">
                                 <div class="mn-img">
-                                    <img src="img/news-350x223-4.jpg" />
+                                    <img src="img/news-350x223-4.jpg" alt="news1" />
                                     <div class="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -442,7 +442,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-4">
                                 <div class="mn-img">
-                                    <img src="img/news-350x223-5.jpg" />
+                                    <img src="img/news-350x223-5.jpg" alt="news1" />
                                     <div class="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -450,7 +450,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-4">
                                 <div class="mn-img">
-                                    <img src="img/news-350x223-1.jpg" />
+                                    <img src="img/news-350x223-1.jpg" alt="news1" />
                                     <div class="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -458,7 +458,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-4">
                                 <div class="mn-img">
-                                    <img src="img/news-350x223-2.jpg" />
+                                    <img src="img/news-350x223-2.jpg" alt="news1" />
                                     <div class="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -466,7 +466,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-4">
                                 <div class="mn-img">
-                                    <img src="img/news-350x223-3.jpg" />
+                                    <img src="img/news-350x223-3.jpg" alt="news1" />
                                     <div class="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
@@ -474,7 +474,7 @@ const Home = () => {
                             </div>
                             <div class="col-md-4">
                                 <div class="mn-img">
-                                    <img src="img/news-350x223-4.jpg" />
+                                    <img src="img/news-350x223-4.jpg" alt="news1" />
                                     <div class="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
