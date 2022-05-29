@@ -7,7 +7,7 @@ import {
 
 import Home from './components/HomePage/Home';
 import ContactUs from './components/contact/contactUs';
-// import Singlepage from './components/singlepage/singlepage';
+import Singlepage from './components/singlepage/singlepage';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Contact-Us" element={<ContactUs />} />
-        {/* <Route path="/news-details" element={<Singlepage />} /> */}
+        <Route path="/news-details" element={<Singlepage />} />
       </Routes>
     </BrowserRouter>
   </>
