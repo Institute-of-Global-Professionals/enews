@@ -6,8 +6,7 @@ import {
   Route
 } from "react-router-dom";
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Home from './components/HomePage/Home';
 import ContactUs from './components/contact/contactUs';
 // import Singlepage from './components/singlepage/singlepage';
 
@@ -19,7 +18,7 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/Contact-Us" element={<ContactUs />} />
         {/* <Route path="/news-details" element={<Singlepage />} /> */}
       </Routes>
