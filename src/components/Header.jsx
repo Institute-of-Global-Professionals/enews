@@ -39,7 +39,7 @@ const Header = () => {
             <div className="col-lg-6 col-md-4">
                 <div className="b-ads">
                     <a href="https://htmlcodex.com">
-                        <img src={ads-1} alt="Ads"/>
+                        <img src={ads} alt="Ads"/>
                     </a>
                 </div>
             </div>
