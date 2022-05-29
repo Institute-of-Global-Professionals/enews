@@ -63,7 +63,7 @@ const Header = () => {
 
             <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div className="navbar-nav mr-auto">
-                    <a href="index.html" className="nav-item nav-link active">Home</a>
+                    <a href="/" className="nav-item nav-link active">Home</a>
                     <div className="nav-item dropdown">
                         <a href="/#" className="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
                         <div className="dropdown-menu">
@@ -71,8 +71,8 @@ const Header = () => {
                             <a href="/#" className="dropdown-item">Sub Item 2</a>
                         </div>
                     </div>
-                    <a href="single-page.html" className="nav-item nav-link">Single Page</a>
-                    <a href="contact.html" className="nav-item nav-link">Contact Us</a>
+                    <a href="/news-details" className="nav-item nav-link">Single Page</a>
+                    <a href="/Contact-Us" className="nav-item nav-link">Contact Us</a>
                 </div>
                 <div className="social ml-auto">
                     <a href="/#"><i className="fab fa-twitter"></i></a>
