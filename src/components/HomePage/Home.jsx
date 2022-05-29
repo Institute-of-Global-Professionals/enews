@@ -16,13 +16,15 @@ const Home = () => {
     }, [])
 
     const useItems = data.map((item, index)=>{
-        return (
-            <div classNameName="tn-item">
-        <div classNameName="tn-img">
-            <img key={index} src={item.urlToImage} alt=""/>
-        </div>
-        </div>
-        )
+            return (
+                <div className="col-md-6">
+                <div classNameName="tn-item">
+            <div classNameName="tn-img">
+                <img key={index} src={item.urlToImage[1]} alt="" className="img-fluid"/>
+            </div>
+            </div>
+            </div>
+            )
     })
   return (
       <>
@@ -32,7 +34,7 @@ const Home = () => {
                 <div className="row">
                     <div className="col-md-6 tn-left">
                         <div className="row tn-slider">
-                            <div className="col-md-6">
+                            
                                 {/* {data.map((item, index) => {
                                             <div classNameName="tn-item">
                                                 <div classNameName="tn-img">
@@ -49,7 +51,6 @@ const Home = () => {
                                 //         <a href="/#">Lorem ipsum dolor sit amet</a>
                                 //     </div>
                                 // </div> */}
-                            </div>
                             <div className="col-md-6">
                                 <div className="tn-img">
                                     <img src="img/news-450x350-2.jpg" alt="news2" />
