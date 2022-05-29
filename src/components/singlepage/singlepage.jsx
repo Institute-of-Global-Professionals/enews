@@ -10,11 +10,15 @@ import news8 from '../../vendor/img/news-350x223-3.jpg';
 import news9 from '../../vendor/img/news-350x223-4.jpg';
 import news10 from '../../vendor/img/news-350x223-5.jpg';
 import ads2 from '../../vendor/img/ads-2.jpg';
+import Header from '../Header';
+import Footer from '../Footer';
 
 
 const singlepage = () => {
   return (
       <>
+      <Header />
+      
     <div className="breadcrumb-wrap">
     <div className="container">
         <ul className="breadcrumb">
@@ -345,6 +349,7 @@ const singlepage = () => {
         </div>
     </div>
 </div>
+<Footer />
 </>
   );
 }
