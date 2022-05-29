@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../Footer';
+import Header from '../Header';
 
 const contactUs = () => {
     return (
@@ -153,7 +154,7 @@ const contactUs = () => {
             </div>
 
             {/* Contact End  */}
-
+            <Header></Header>
             <Footer></Footer>
         </>
 
