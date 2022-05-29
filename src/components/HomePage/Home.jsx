@@ -1,64 +1,95 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Header from '../Header';
 import Footer from '../Footer';
+import axios from 'axios';
 
 const Home = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const  fetch = async()  => {
+        const result = await axios.get('https://newsapi.org/v2/everything?q=apple&from=2022-05-28&to=2022-05-28&sortBy=popularity&apiKey=22768fd83d4f42788e575d9be6fc3fdd');
+        setData(result.data.articles)
+        console.log(data);
+        }
+        fetch();
+    }, [])
+
+    const useItems = data.map((item, index)=>{
+        return (
+            <div classNameName="tn-item">
+        <div classNameName="tn-img">
+            <img key={index} src={item.urlToImage} alt=""/>
+        </div>
+        </div>
+        )
+    })
   return (
       <>
       <Header/>
-      <div class="top-news">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 tn-left">
-                        <div class="row tn-slider">
-                            <div class="col-md-6">
-                                <div class="tn-img">
-                                    <img src="img/news-450x350-1.jpg" alt="news1"/>
-                                    <div class="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
+      <div className="top-news">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6 tn-left">
+                        <div className="row tn-slider">
+                            <div className="col-md-6">
+                                {/* {data.map((item, index) => {
+                                            <div classNameName="tn-item">
+                                                <div classNameName="tn-img">
+                                                    <img key={index} src={item.urlToImage} alt=""/>
+                                                </div>
+                                                </div>
+                                    }
+                                )
+                                } */}
+                                {data && useItems}
+                                {/* // <div className="tn-img">
+                                //     <img src="img/news-450x350-1.jpg" alt="news1"/>
+                                //     <div className="tn-title">
+                                //         <a href="/#">Lorem ipsum dolor sit amet</a>
+                                //     </div>
+                                // </div> */}
                             </div>
-                            <div class="col-md-6">
-                                <div class="tn-img">
+                            <div className="col-md-6">
+                                <div className="tn-img">
                                     <img src="img/news-450x350-2.jpg" alt="news2" />
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a  href="/#">Integer hendrerit elit eget purus sodales maximus</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 tn-right">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="tn-img">
+                    <div className="col-md-6 tn-right">
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div className="tn-img">
                                     <img src="img/news-350x223-1.jpg" alt="news3" />
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="tn-img">
+                            <div className="col-md-6">
+                                <div className="tn-img">
                                     <img src="img/news-350x223-2.jpg" alt="news3" />
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="tn-img">
+                            <div className="col-md-6">
+                                <div className="tn-img">
                                     <img src="img/news-350x223-3.jpg" alt="news4" />
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="tn-img">
+                            <div className="col-md-6">
+                                <div className="tn-img">
                                     <img src="img/news-350x223-4.jpg" alt="news5" />
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
@@ -72,61 +103,61 @@ const Home = () => {
 
 
 
-        <div class="cat-news">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
+        <div className="cat-news">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6">
                         <h2>Sports</h2>
-                        <div class="row cn-slider">
-                            <div class="col-md-6">
-                                <div class="cn-img">
+                        <div className="row cn-slider">
+                            <div className="col-md-6">
+                                <div className="cn-img">
                                     <img src="img/news-350x223-1.jpg" alt="news6" />
-                                    <div class="cn-title">
+                                    <div className="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="cn-img">
+                            <div className="col-md-6">
+                                <div className="cn-img">
                                     <img src="img/news-350x223-2.jpg" alt="news7" />
-                                    <div class="cn-title">
+                                    <div className="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="cn-img">
+                            <div className="col-md-6">
+                                <div className="cn-img">
                                     <img src="img/news-350x223-3.jpg" alt="news8" />
-                                    <div class="cn-title">
+                                    <div className="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div className="col-md-6">
                         <h2>Technology</h2>
-                        <div class="row cn-slider">
-                            <div class="col-md-6">
-                                <div class="cn-img">
+                        <div className="row cn-slider">
+                            <div className="col-md-6">
+                                <div className="cn-img">
                                     <img src="img/news-350x223-4.jpg" alt="news9" />
-                                    <div class="cn-title">
+                                    <div className="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="cn-img">
+                            <div className="col-md-6">
+                                <div className="cn-img">
                                     <img src="img/news-350x223-5.jpg" alt="news10" />
-                                    <div class="cn-title">
+                                    <div className="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="cn-img">
+                            <div className="col-md-6">
+                                <div className="cn-img">
                                     <img src="img/news-350x223-1.jpg" alt="news11" />
-                                    <div class="cn-title">
+                                    <div className="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
@@ -139,61 +170,61 @@ const Home = () => {
 
 
 
-        <div class="cat-news">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
+        <div className="cat-news">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6">
                         <h2>Business</h2>
-                        <div class="row cn-slider">
-                            <div class="col-md-6">
-                                <div class="cn-img">
+                        <div className="row cn-slider">
+                            <div className="col-md-6">
+                                <div className="cn-img">
                                     <img src="img/news-350x223-5.jpg" alt="news1" />
-                                    <div class="cn-title">
+                                    <div className="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="cn-img">
+                            <div className="col-md-6">
+                                <div className="cn-img">
                                     <img src="img/news-350x223-4.jpg" alt="news1" />
-                                    <div class="cn-title">
+                                    <div className="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="cn-img">
+                            <div className="col-md-6">
+                                <div className="cn-img">
                                     <img src="img/news-350x223-3.jpg" alt="news1" />
-                                    <div class="cn-title">
+                                    <div className="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div className="col-md-6">
                         <h2>Entertainment</h2>
-                        <div class="row cn-slider">
-                            <div class="col-md-6">
-                                <div class="cn-img">
+                        <div className="row cn-slider">
+                            <div className="col-md-6">
+                                <div className="cn-img">
                                     <img src="img/news-350x223-2.jpg" alt="news1" />
-                                    <div class="cn-title">
+                                    <div className="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="cn-img">
+                            <div className="col-md-6">
+                                <div className="cn-img">
                                     <img src="img/news-350x223-1.jpg" alt="news1" />
-                                    <div class="cn-title">
+                                    <div className="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="cn-img">
+                            <div className="col-md-6">
+                                <div className="cn-img">
                                     <img src="img/news-350x223-3.jpg" alt="news1" />
-                                    <div class="cn-title">
+                                    <div className="cn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
@@ -206,97 +237,97 @@ const Home = () => {
 
 
 
-        <div class="tab-news">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul class="nav nav-pills nav-justified">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="pill" href="#featured">Featured News</a>
+        <div className="tab-news">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6">
+                        <ul className="nav nav-pills nav-justified">
+                            <li className="nav-item">
+                                <a className="nav-link active" data-toggle="pill" href="#featured">Featured News</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#popular">Popular News</a>
+                            <li className="nav-item">
+                                <a className="nav-link" data-toggle="pill" href="#popular">Popular News</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
+                            <li className="nav-item">
+                                <a className="nav-link" data-toggle="pill" href="#latest">Latest News</a>
                             </li>
                         </ul>
 
-                        <div class="tab-content">
-                            <div id="featured" class="container tab-pane active">
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                        <div className="tab-content">
+                            <div id="featured" className="container tab-pane active">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-1.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-2.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-3.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
                             </div>
-                            <div id="popular" class="container tab-pane fade">
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                            <div id="popular" className="container tab-pane fade">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-4.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-5.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-1.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
                             </div>
-                            <div id="latest" class="container tab-pane fade">
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                            <div id="latest" className="container tab-pane fade">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-2.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-3.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-4.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
@@ -304,94 +335,94 @@ const Home = () => {
                         </div>
                     </div>
                     
-                    <div class="col-md-6">
-                        <ul class="nav nav-pills nav-justified">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="pill" href="#m-viewed">Most Viewed</a>
+                    <div className="col-md-6">
+                        <ul className="nav nav-pills nav-justified">
+                            <li className="nav-item">
+                                <a className="nav-link active" data-toggle="pill" href="#m-viewed">Most Viewed</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#m-read">Most Read</a>
+                            <li className="nav-item">
+                                <a className="nav-link" data-toggle="pill" href="#m-read">Most Read</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#m-recent">Most Recent</a>
+                            <li className="nav-item">
+                                <a className="nav-link" data-toggle="pill" href="#m-recent">Most Recent</a>
                             </li>
                         </ul>
 
-                        <div class="tab-content">
-                            <div id="m-viewed" class="container tab-pane active">
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                        <div className="tab-content">
+                            <div id="m-viewed" className="container tab-pane active">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-5.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-4.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-3.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
                             </div>
-                            <div id="m-read" class="container tab-pane fade">
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                            <div id="m-read" className="container tab-pane fade">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-2.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-1.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-3.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
                             </div>
-                            <div id="m-recent" class="container tab-pane fade">
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                            <div id="m-recent" className="container tab-pane fade">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-4.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-5.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
-                                <div class="tn-news">
-                                    <div class="tn-img">
+                                <div className="tn-news">
+                                    <div className="tn-img">
                                         <img src="img/news-350x223-1.jpg" alt="news1" />
                                     </div>
-                                    <div class="tn-title">
+                                    <div className="tn-title">
                                         <a href="/#">Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
@@ -403,79 +434,79 @@ const Home = () => {
         </div>
 
 
-        <div class="main-news">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="mn-img">
+        <div className="main-news">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-9">
+                        <div className="row">
+                            <div className="col-md-4">
+                                <div className="mn-img">
                                     <img src="img/news-350x223-1.jpg" alt="news1" />
-                                    <div class="mn-title">
+                                    <div className="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="mn-img">
+                            <div className="col-md-4">
+                                <div className="mn-img">
                                     <img src="img/news-350x223-2.jpg" alt="news1" />
-                                    <div class="mn-title">
+                                    <div className="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="mn-img">
+                            <div className="col-md-4">
+                                <div className="mn-img">
                                     <img src="img/news-350x223-3.jpg" alt="news1" />
-                                    <div class="mn-title">
+                                    <div className="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="mn-img">
+                            <div className="col-md-4">
+                                <div className="mn-img">
                                     <img src="img/news-350x223-4.jpg" alt="news1" />
-                                    <div class="mn-title">
+                                    <div className="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="mn-img">
+                            <div className="col-md-4">
+                                <div className="mn-img">
                                     <img src="img/news-350x223-5.jpg" alt="news1" />
-                                    <div class="mn-title">
+                                    <div className="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="mn-img">
+                            <div className="col-md-4">
+                                <div className="mn-img">
                                     <img src="img/news-350x223-1.jpg" alt="news1" />
-                                    <div class="mn-title">
+                                    <div className="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="mn-img">
+                            <div className="col-md-4">
+                                <div className="mn-img">
                                     <img src="img/news-350x223-2.jpg" alt="news1" />
-                                    <div class="mn-title">
+                                    <div className="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="mn-img">
+                            <div className="col-md-4">
+                                <div className="mn-img">
                                     <img src="img/news-350x223-3.jpg" alt="news1" />
-                                    <div class="mn-title">
+                                    <div className="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="mn-img">
+                            <div className="col-md-4">
+                                <div className="mn-img">
                                     <img src="img/news-350x223-4.jpg" alt="news1" />
-                                    <div class="mn-title">
+                                    <div className="mn-title">
                                         <a href="/#">Lorem ipsum dolor sit</a>
                                     </div>
                                 </div>
@@ -483,8 +514,8 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div class="col-lg-3">
-                        <div class="mn-list">
+                    <div className="col-lg-3">
+                        <div className="mn-list">
                             <h2>Read More</h2>
                             <ul>
                                 <li><a href="/#">Lorem ipsum dolor sit amet</a></li>
