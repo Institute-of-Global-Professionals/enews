@@ -18,9 +18,12 @@ const Home = () => {
     const useItems = data.map((item, index)=>{
             return (
                 <div className="col-md-6">
-                <div classNameName="tn-item">
-            <div classNameName="tn-img">
-                <img key={index} src={item.urlToImage[1]} alt="" className="img-fluid"/>
+                <div className="tn-item">
+            <div className="tn-img">
+                <img key={index} src={item.urlToImage} alt="" className="img-fluid"/>
+                <div className="tn-title">
+                    <a href="/#">{item.title}</a>
+                </div>
             </div>
             </div>
             </div>
@@ -36,8 +39,8 @@ const Home = () => {
                         <div className="row tn-slider">
                             
                                 {/* {data.map((item, index) => {
-                                            <div classNameName="tn-item">
-                                                <div classNameName="tn-img">
+                                            <div className="tn-item">
+                                                <div className="tn-img">
                                                     <img key={index} src={item.urlToImage} alt=""/>
                                                 </div>
                                                 </div>

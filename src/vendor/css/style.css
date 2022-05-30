@@ -11,6 +11,7 @@ body {
 a {
     color: #FF6F61;
     transition: 0.5s;
+    font-size: 14px!important;
 }
 
 
@@ -1048,7 +1049,7 @@ button.btn:hover {
 
 .sidebar .category ul li span {
     display: inline-block;
-    float: right;
+    /* float: right; */
 }
 
 .sidebar .sidebar-widget .tags {
