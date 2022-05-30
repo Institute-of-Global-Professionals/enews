@@ -1,14 +1,24 @@
 import React, {useState, useEffect} from 'react'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Header from '../Header';
 import Footer from '../Footer';
 import axios from 'axios';
 
 const Home = () => {
+    const settings = {
+        autoplay: true,
+        infinite: true,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      };
     const [data, setData] = useState([]);
 
     useEffect(() => {
         const  fetch = async()  => {
-        const result = await axios.get('https://newsapi.org/v2/everything?q=apple&from=2022-05-28&to=2022-05-28&sortBy=popularity&apiKey=22768fd83d4f42788e575d9be6fc3fdd');
+        const result = await axios.get('https://newsapi.org/v2/everything?q=tesla&from=2022-04-30&sortBy=publishedAt&apiKey=22768fd83d4f42788e575d9be6fc3fdd');
         setData(result.data.articles)
         console.log(data);
         }
@@ -17,10 +27,10 @@ const Home = () => {
 
     const useItems = data.map((item, index)=>{
             return (
-                <div className="col-md-6">
+                <div key={index} className="col-md-6">
                 <div className="tn-item">
             <div className="tn-img">
-                <img key={index} src={item.urlToImage} alt="" className="img-fluid"/>
+                <img  src={item.urlToImage} alt="" className="img-fluid"/>
                 <div className="tn-title">
                     <a href="/#">{item.title}</a>
                 </div>
@@ -36,33 +46,9 @@ const Home = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 tn-left">
-                        <div className="row tn-slider">
-                            
-                                {/* {data.map((item, index) => {
-                                            <div className="tn-item">
-                                                <div className="tn-img">
-                                                    <img key={index} src={item.urlToImage} alt=""/>
-                                                </div>
-                                                </div>
-                                    }
-                                )
-                                } */}
-                                {data && useItems}
-                                {/* // <div className="tn-img">
-                                //     <img src="img/news-450x350-1.jpg" alt="news1"/>
-                                //     <div className="tn-title">
-                                //         <a href="/#">Lorem ipsum dolor sit amet</a>
-                                //     </div>
-                                // </div> */}
-                            <div className="col-md-6">
-                                <div className="tn-img">
-                                    <img src="img/news-450x350-2.jpg" alt="news2" />
-                                    <div className="tn-title">
-                                        <a  href="/#">Integer hendrerit elit eget purus sodales maximus</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <Slider className="row tn-slider" {...settings}>
+                            {data && useItems}
+                        </Slider>
                     </div>
                     <div className="col-md-6 tn-right">
                         <div className="row">

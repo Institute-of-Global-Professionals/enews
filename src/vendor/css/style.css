@@ -47,6 +47,8 @@ h6 {
     font-weight: 400;
 }
 .img-fluid{
+    /* width: 700px;
+    height: 300px; */
     max-width: 100%;
     height: auto;
 }
