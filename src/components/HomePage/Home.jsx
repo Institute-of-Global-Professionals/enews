@@ -159,42 +159,48 @@ const Home = (props) => {
     const [technology, setTechnology] = useState([]);
     const [business, setBusiness] = useState([]);
     const [entertainment, setEntertainment] = useState([]);
+    const [chartSecond, setChartSecond] = useState([]);
 
 
     useEffect(() => {
         const  fetch = async()  => {
         const result = await axios.get('https://newsapi.org/v2/everything?q=tesla&from=2022-04-30&sortBy=publishedAt&apiKey=22768fd83d4f42788e575d9be6fc3fdd');
         setData(result.data.articles)
-        console.log(data);
+        // console.log(data);
         }
 
         const fetchNews = async() => {
             const result = await axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=22768fd83d4f42788e575d9be6fc3fdd')
-            setSecondData(result.data.articles)
-            console.log(secondData);
+            
+            const slice = (result.data.articles).slice(0, 4);
+            setSecondData(slice)
         }
 
         const sportsData = async () => {
             const result = await axios.get('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=400fb535b895424d88034ff83db77ddf');
             setSports(result.data.articles)
-            console.log(data);
+            // console.log(data);
         }
 
         const technologyData = async () => {
             const result = await axios.get('https://newsapi.org/v2/everything?q=tesla&from=2022-04-30&sortBy=publishedAt&apiKey=400fb535b895424d88034ff83db77ddf');
             setTechnology(result.data.articles)
-            console.log(data);
+            // console.log(data);
+
+           
         }
         const businessData = async () => {
             const result = await axios.get('https://newsapi.org/v2/everything?q=apple&from=2022-05-30&to=2022-05-30&sortBy=popularity&apiKey=400fb535b895424d88034ff83db77ddf');
             setBusiness(result.data.articles)
-            console.log(business);
+            // console.log(business);
+            const slice = (result.data.articles).slice(0, 4);
+            setChartSecond(slice)
         }
 
         const entertainmentData = async () => {
             const result = await axios.get('https://newsapi.org/v2/everything?domains=wsj.com&apiKey=400fb535b895424d88034ff83db77ddf');
             setEntertainment(result.data.articles)
-            console.log(business);
+            // console.log(business);
         }
         
         fetch();
@@ -224,7 +230,7 @@ const Home = (props) => {
 
 
     const newsLeft = secondData.map((item, index)=>{
-        for(let i=0; item.length <= i ; i++){
+
             return (
                 <div key={index} className="col-md-6">
                 <div className="small-img">
@@ -237,7 +243,6 @@ const Home = (props) => {
                 </div>
             </div>  
             )
-        }
     })
 
 
@@ -298,6 +303,38 @@ const Home = (props) => {
                     }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link>
                         </div>
                     </div>
+            </div>
+        )
+    })
+
+
+    const chartNews = secondData.map((item, index) => {
+        // console.log(item.slice(0,3))
+        return (
+            <div key={index} className="tn-news">
+                <div className="tn-img">
+                    <img src={item.urlToImage} alt="news1" />
+                </div>
+                <div className="tn-title">
+                <Link to={{ 
+                        pathname: `/news-details/${item.title}`,
+                    }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link>
+                </div>
+            </div>
+        )
+    })
+
+    const chartNewsSecond = chartSecond.map((item, index) =>{
+        return (
+            <div className="tn-news">
+                <div className="tn-img">
+                    <img src={item.urlToImage} alt="news1" />
+                </div>
+                <div className="tn-title">
+                <Link to={{ 
+                        pathname: `/news-details/${item.title}`,
+                    }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link>
+                </div>
             </div>
         )
     })
@@ -386,82 +423,13 @@ const Home = (props) => {
 
                         <div className="tab-content">
                             <div id="featured" className="container tab-pane active">
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-1.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-2.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-3.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
+                                {secondData && chartNews}
                             </div>
                             <div id="popular" className="container tab-pane fade">
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-4.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-5.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-1.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
+                                {chartSecond && chartNewsSecond}
                             </div>
                             <div id="latest" className="container tab-pane fade">
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-2.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-3.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-4.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
+                                {secondData && chartNews}
                             </div>
                         </div>
                     </div>
@@ -481,82 +449,13 @@ const Home = (props) => {
 
                         <div className="tab-content">
                             <div id="m-viewed" className="container tab-pane active">
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-5.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-4.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-3.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
+                            {chartSecond && chartNewsSecond}
                             </div>
                             <div id="m-read" className="container tab-pane fade">
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-2.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-1.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-3.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
+                                {secondData && chartNews}
                             </div>
                             <div id="m-recent" className="container tab-pane fade">
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-4.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-5.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
-                                <div className="tn-news">
-                                    <div className="tn-img">
-                                        <img src="img/news-350x223-1.jpg" alt="news1" />
-                                    </div>
-                                    <div className="tn-title">
-                                        <a href="/#">Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
+                                {chartSecond && chartNewsSecond}
                             </div>
                         </div>
                     </div>
