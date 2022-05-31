@@ -56,7 +56,7 @@ const singlepage = (props) => {
                     <div className="row sn-slider">
                         <div className="col-md-4">
                             <div className="sn-img">
-                                <img src={news2} alt="new" />
+                                <img src={news2} alt="new2" />
                                 <div className="sn-title">
                                     <a href="">Interdum et fames ac ante</a>
                                 </div>

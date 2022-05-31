@@ -49,6 +49,40 @@ const Home = (props) => {
         ]
       };
 
+      const settingsBusniess = {
+        autoplay: false,
+        infinite: true,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+      };
+
       const settingsTechnology = {
         autoplay: false,
         infinite: true,
@@ -82,11 +116,50 @@ const Home = (props) => {
             }
         ]
       };
-    const [data, setData] = useState([]);
 
+      const settingsEntertainment = {
+        autoplay: false,
+        infinite: true,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+      };
+
+
+
+    const [data, setData] = useState([]);
     const [secondData, setSecondData] = useState([]);
     const [sports, setSports] = useState([]);
     const [technology, setTechnology] = useState([]);
+    const [business, setBusiness] = useState([]);
+    const [entertainment, setEntertainment] = useState([]);
+
 
     useEffect(() => {
         const  fetch = async()  => {
@@ -96,11 +169,7 @@ const Home = (props) => {
         }
 
         const fetchNews = async() => {
-            const result = await axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=22768fd83d4f42788e575d9be6fc3fdd', {
-                params: {
-                    _limit: 4
-                   }
-            })
+            const result = await axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=22768fd83d4f42788e575d9be6fc3fdd')
             setSecondData(result.data.articles)
             console.log(secondData);
         }
@@ -116,11 +185,24 @@ const Home = (props) => {
             setTechnology(result.data.articles)
             console.log(data);
         }
+        const businessData = async () => {
+            const result = await axios.get('https://newsapi.org/v2/everything?q=apple&from=2022-05-30&to=2022-05-30&sortBy=popularity&apiKey=400fb535b895424d88034ff83db77ddf');
+            setBusiness(result.data.articles)
+            console.log(business);
+        }
+
+        const entertainmentData = async () => {
+            const result = await axios.get('https://newsapi.org/v2/everything?domains=wsj.com&apiKey=400fb535b895424d88034ff83db77ddf');
+            setEntertainment(result.data.articles)
+            console.log(business);
+        }
         
         fetch();
         fetchNews();
         sportsData();
         technologyData();
+        businessData();
+        entertainmentData();
     }, [])
 
     const useItems = data.map((item, index)=>{
@@ -142,18 +224,20 @@ const Home = (props) => {
 
 
     const newsLeft = secondData.map((item, index)=>{
-        return (
-            <div key={index} className="col-md-6">
-            <div className="small-img">
-                <img src={item.urlToImage} alt="news3" />
-                <div className="tn-title">
-                <Link to={{ 
-                        pathname: `/news-details/${item.title}`,
-                    }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link>
+        for(let i=0; item.length <= i ; i++){
+            return (
+                <div key={index} className="col-md-6">
+                <div className="small-img">
+                    <img src={item.urlToImage} alt="news3" />
+                    <div className="tn-title">
+                    <Link to={{ 
+                            pathname: `/news-details/${item.title}`,
+                        }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link>
+                    </div>
                 </div>
-            </div>
-        </div>  
-        )
+            </div>  
+            )
+        }
     })
 
 
@@ -178,12 +262,47 @@ const Home = (props) => {
                 <div className="cn-img">
                     <img src={item.urlToImage} alt="news6" />
                     <div className="cn-title">
-                        <a href="/#">{item.title}</a>
+                    <Link to={{ 
+                        pathname: `/news-details/${item.title}`,
+                    }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link>
                     </div>
                 </div>
             </div>
         )
     })
+
+
+    const busniessNews = business.map((item, index) =>{
+        return (
+            <div key={index} className="col-md-12">
+            <div className="cn-img">
+                <img src={item.urlToImage} alt="news1" />
+                <div className="cn-title">
+                <Link to={{ 
+                        pathname: `/news-details/${item.title}`,
+                    }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link>
+                </div>
+            </div>
+        </div>
+        )
+    })
+
+    const entertainmentNews = entertainment.map((item, index) =>{
+        return (
+            <div key={index} className="col-md-12">
+                <div className="cn-img">
+                    <img src={item.urlToImage} alt="news1" />
+                        <div className="cn-title">
+                        <Link to={{ 
+                        pathname: `/news-details/${item.title}`,
+                    }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link>
+                        </div>
+                    </div>
+            </div>
+        )
+    })
+
+    
   return (
       <>
       <Header/>
@@ -233,61 +352,15 @@ const Home = (props) => {
                 <div className="row">
                     <div className="col-md-6">
                         <h2>Business</h2>
-                        <div className="row cn-slider">
-                            <div className="col-md-6">
-                                <div className="cn-img">
-                                    <img src="img/news-350x223-5.jpg" alt="news1" />
-                                    <div className="cn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="cn-img">
-                                    <img src="img/news-350x223-4.jpg" alt="news1" />
-                                    <div className="cn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="cn-img">
-                                    <img src="img/news-350x223-3.jpg" alt="news1" />
-                                    <div className="cn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <Slider className="row cn-slider" {...settingsBusniess}>
+                            {business && busniessNews}
+                        </Slider>
                     </div>
                     <div className="col-md-6">
                         <h2>Entertainment</h2>
-                        <div className="row cn-slider">
-                            <div className="col-md-6">
-                                <div className="cn-img">
-                                    <img src="img/news-350x223-2.jpg" alt="news1" />
-                                    <div className="cn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="cn-img">
-                                    <img src="img/news-350x223-1.jpg" alt="news1" />
-                                    <div className="cn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="cn-img">
-                                    <img src="img/news-350x223-3.jpg" alt="news1" />
-                                    <div className="cn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <Slider className="row cn-slider" {...settingsEntertainment}>
+                            {entertainment && entertainmentNews}
+                        </Slider>
                     </div>
                 </div>
             </div>
