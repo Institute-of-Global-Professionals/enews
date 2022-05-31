@@ -29,7 +29,7 @@ const singlepage = (props) => {
         <ul className="breadcrumb">
             <li className="breadcrumb-item"><a href="/#">Home</a></li>
             <li className="breadcrumb-item"><a href="/#">News</a></li>
-            <li className="breadcrumb-item active">News details</li>
+            <li className="breadcrumb-item active">{title}</li>
         </ul>
     </div>
 </div>

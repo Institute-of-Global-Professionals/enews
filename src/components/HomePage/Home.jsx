@@ -163,7 +163,9 @@ const Home = (props) => {
                 <div className="cn-img">
                     <img src={item.urlToImage} alt="news6" />
                     <div className="cn-title">
-                        <a href="/#">{item.title}</a>
+                    <Link to={{ 
+                        pathname: `/news-details/${item.title}`,
+                    }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link>
                     </div>
                 </div>
             </div>
