@@ -320,13 +320,13 @@ const Home = (props) => {
                         pathname: `/news-details/${item.title}`,
                     }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link>
                 </div>
-            </div>
+            </div> 
         )
     })
 
     const chartNewsSecond = chartSecond.map((item, index) =>{
         return (
-            <div className="tn-news">
+            <div key={index} className="tn-news">
                 <div className="tn-img">
                     <img src={item.urlToImage} alt="news1" />
                 </div>
