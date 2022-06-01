@@ -160,6 +160,7 @@ const Home = (props) => {
     const [business, setBusiness] = useState([]);
     const [entertainment, setEntertainment] = useState([]);
     const [chartSecond, setChartSecond] = useState([]);
+    const [lastnews, setLastnews] = useState([]);
 
 
     useEffect(() => {
@@ -202,6 +203,12 @@ const Home = (props) => {
             setEntertainment(result.data.articles)
             // console.log(business);
         }
+
+        const lastNewsData = async () => {
+            const result = await axios.get('https://newsapi.org/v2/everything?q=apple&from=2022-05-30&to=2022-05-30&sortBy=popularity&apiKey=400fb535b895424d88034ff83db77ddf');
+            setLastnews(result.data.articles)
+            // console.log(business);
+        }
         
         fetch();
         fetchNews();
@@ -209,6 +216,7 @@ const Home = (props) => {
         technologyData();
         businessData();
         entertainmentData();
+        lastNewsData();
     }, [])
 
     const useItems = data.map((item, index)=>{
@@ -324,6 +332,16 @@ const Home = (props) => {
         )
     })
 
+    const link = secondData.map((item, index) => {
+        return (
+            <li key={index}>
+                    <Link to={{ 
+                        pathname: `/news-details/${item.title}`,
+                    }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link>
+            </li>
+        )
+    })
+
     const chartNewsSecond = chartSecond.map((item, index) =>{
         return (
             <div key={index} className="tn-news">
@@ -334,6 +352,22 @@ const Home = (props) => {
                 <Link to={{ 
                         pathname: `/news-details/${item.title}`,
                     }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link>
+                </div>
+            </div>
+        )
+    })
+
+
+    const lastNewsData = lastnews.map((item, index)=>{
+        return (
+            <div key={index} className="col-md-4">
+                <div className="mn-img">
+                <img src={item.urlToImage} alt="newsnews1" />
+                    <div className="mn-title">
+                    <Link to={{ 
+                        pathname: `/news-details/${item.title}`,
+                    }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link>
+                    </div>
                 </div>
             </div>
         )
@@ -469,78 +503,7 @@ const Home = (props) => {
                 <div className="row">
                     <div className="col-lg-9">
                         <div className="row">
-                            <div className="col-md-4">
-                                <div className="mn-img">
-                                    <img src="img/news-350x223-1.jpg" alt="news1" />
-                                    <div className="mn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="mn-img">
-                                    <img src="img/news-350x223-2.jpg" alt="news1" />
-                                    <div className="mn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="mn-img">
-                                    <img src="img/news-350x223-3.jpg" alt="news1" />
-                                    <div className="mn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="mn-img">
-                                    <img src="img/news-350x223-4.jpg" alt="news1" />
-                                    <div className="mn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="mn-img">
-                                    <img src="img/news-350x223-5.jpg" alt="news1" />
-                                    <div className="mn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="mn-img">
-                                    <img src="img/news-350x223-1.jpg" alt="news1" />
-                                    <div className="mn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="mn-img">
-                                    <img src="img/news-350x223-2.jpg" alt="news1" />
-                                    <div className="mn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="mn-img">
-                                    <img src="img/news-350x223-3.jpg" alt="news1" />
-                                    <div className="mn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <div className="mn-img">
-                                    <img src="img/news-350x223-4.jpg" alt="news1" />
-                                    <div className="mn-title">
-                                        <a href="/#">Lorem ipsum dolor sit</a>
-                                    </div>
-                                </div>
-                            </div>
+                            {lastnews && lastNewsData}
                         </div>
                     </div>
 
@@ -548,7 +511,8 @@ const Home = (props) => {
                         <div className="mn-list">
                             <h2>Read More</h2>
                             <ul>
-                                <li><a href="/#">Lorem ipsum dolor sit amet</a></li>
+                                {secondData && link}
+                                {/* <li><a href="/#">Lorem ipsum dolor sit amet</a></li>
                                 <li><a href="/#">Pellentesque tincidunt enim libero</a></li>
                                 <li><a href="/#">Morbi id finibus diam vel pretium enim</a></li>
                                 <li><a href="/#">Duis semper sapien in eros euismod sodales</a></li>
@@ -557,7 +521,7 @@ const Home = (props) => {
                                 <li><a href="/#">Etiam vitae elit felis sit amet</a></li>
                                 <li><a href="/#">Nullam congue massa vitae quam</a></li>
                                 <li><a href="/#">Proin sed ante rutrum</a></li>
-                                <li><a href="/#">Curabitur vel lectus</a></li>
+                                <li><a href="/#">Curabitur vel lectus</a></li> */}
                             </ul>
                         </div>
                     </div>
