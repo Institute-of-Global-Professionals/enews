@@ -31,14 +31,14 @@ const Header = () => {
         <div className="row align-items-center">
             <div className="col-lg-3 col-md-4">
                 <div className="b-logo">
-                    <a href="index.html">
+                    <a href="/">
                         <img src={logo} alt="Logo"/>
                     </a>
                 </div>
             </div>
             <div className="col-lg-6 col-md-4">
                 <div className="b-ads">
-                    <a href="https://htmlcodex.com">
+                    <a href="/">
                         <img src={ads} alt="Ads"/>
                     </a>
                 </div>
@@ -56,7 +56,7 @@ const Header = () => {
 <div className="nav-bar">
     <div className="container">
         <nav className="navbar navbar-expand-md bg-dark navbar-dark">
-            <a href="/#" className="navbar-brand">MENU</a>
+            <a href="/" className="navbar-brand">MENU</a>
             <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -65,13 +65,13 @@ const Header = () => {
                 <div className="navbar-nav mr-auto">
                     <a href="/" className="nav-item nav-link active">Home</a>
                     <div className="nav-item dropdown">
-                        <a href="/#" className="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                        <div className="dropdown-menu">
-                            <a href="/#" className="dropdown-item">Sub Item 1</a>
-                            <a href="/#" className="dropdown-item">Sub Item 2</a>
-                        </div>
-                    </div>
-                    <a href="/news-details" className="nav-item nav-link">Single Page</a>
+                                <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+                                <div className="dropdown-menu">
+                                    <a href="#" className="dropdown-item">Sub Item 1</a>
+                                    <a href="#" className="dropdown-item">Sub Item 2</a>
+                                </div>
+                            </div>
+                    {/* <a href="/news-details" className="nav-item nav-link">Single Page</a> */}
                     <a href="/Contact-Us" className="nav-item nav-link">Contact Us</a>
                 </div>
                 <div className="social ml-auto">
