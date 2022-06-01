@@ -9,9 +9,9 @@ const Footer = () => {
                         <div className="footer-widget">
                             <h3 className="title">Get in Touch</h3>
                             <div className="contact-info">
-                                <p><i className="fa fa-map-marker"></i>123 News Street, NY, USA</p>
+                                <p><i className="fa fa-map-marker"></i>Sugandha Cinema hall, 2nd floor.1280, SS khaled road, kajirdhawri,chattogram</p>
                                 <p><i className="fa fa-envelope"></i>info@example.com</p>
-                                <p><i className="fa fa-phone"></i>+123-456-7890</p>
+                                <p><i className="fa fa-phone"></i>+8801843046324</p>
                                 <div className="social">
                                     <a href="/#"><i className="fab fa-twitter"></i></a>
                                     <a href="/#"><i className="fab fa-facebook-f"></i></a>
@@ -27,11 +27,11 @@ const Footer = () => {
                         <div className="footer-widget">
                             <h3 className="title">Useful Links</h3>
                             <ul>
-                                <li><a href="/#">Lorem ipsum</a></li>
-                                <li><a href="/#">Pellentesque</a></li>
-                                <li><a href="/#">Aenean vulputate</a></li>
-                                <li><a href="/#">Vestibulum sit amet</a></li>
-                                <li><a href="/#">Nam dignissim</a></li>
+                                <li><a href="/#">Links 1</a></li>
+                                <li><a href="/#">Links 2</a></li>
+                                <li><a href="/#">Links 3</a></li>
+                                <li><a href="/#">Links 4</a></li>
+                                <li><a href="/#">Links 5</a></li>
                             </ul>
                         </div>
                     </div>
@@ -40,11 +40,11 @@ const Footer = () => {
                         <div className="footer-widget">
                             <h3 className="title">Quick Links</h3>
                             <ul>
-                                <li><a href="/#">Lorem ipsum</a></li>
-                                <li><a href="/#">Pellentesque</a></li>
-                                <li><a href="/#">Aenean vulputate</a></li>
-                                <li><a href="/#">Vestibulum sit amet</a></li>
-                                <li><a href="/#">Nam dignissim</a></li>
+                                <li><a href="/#">Quick Links 1</a></li>
+                                <li><a href="/#">Quick Links 2</a></li>
+                                <li><a href="/#">Quick Links 3</a></li>
+                                <li><a href="/#">Quick Links 4</a></li>
+                                <li><a href="/#">Quick Links 5</a></li>
                             </ul>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ const Footer = () => {
                             <h3 className="title">Newsletter</h3>
                             <div className="newsletter">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed porta dui. className aptent taciti sociosqu
+                                   Subscribe for weekly emails with curated articles.
                                 </p>
                                 <form>
                                     <input className="form-control" type="email" placeholder="Your email here"/>
