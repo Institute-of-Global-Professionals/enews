@@ -26,12 +26,13 @@ const singlepage = (props) => {
     useEffect(()=>{
         const relNews = async() => {
           const result = await axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=22768fd83d4f42788e575d9be6fc3fdd') ;
-          setRelatedNews(result.data); 
+          setRelatedNews(result.data.articles); 
+          console.log(result.data);
         }
         relNews();
     }, []);
     
-    const relNewsData = relatedNews.map((item,index)=>{
+    const relNewsData = relatedNews.map((item, index)=>{
         return (
             <div key={index} className="col-md-4">
                             <div className="sn-img">
@@ -39,7 +40,7 @@ const singlepage = (props) => {
                                 <div className="sn-title">
                                 <Link to={{ 
                         pathname: `/news-details/${item.title}`,
-                    }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link> 
+                        }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link> 
                                 </div>
                             </div>
                         </div>
