@@ -1,5 +1,6 @@
-import React from 'react';
-import {useLocation} from "react-router-dom";
+import React,{useEffect,useState} from 'react';
+import {useLocation, Link} from "react-router-dom";
+import axios from 'axios';
 // import news1 from '../../vendor/img/news-825x525.jpg';
 import news2 from '../../vendor/img/news-350x223-1.jpg';
 import news3 from '../../vendor/img/news-350x223-2.jpg';
@@ -20,6 +21,31 @@ const singlepage = (props) => {
     const {title, content, image, publishDate} = useLocation().state;
     // console.log("promps type" + type);
     // console.log(title, content, image);
+
+    const [relatedNews, setRelatedNews] = useState([]);
+    useEffect(()=>{
+        const relNews = async() => {
+          const result = await axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=22768fd83d4f42788e575d9be6fc3fdd') ;
+          setRelatedNews(result.data); 
+        }
+        relNews();
+    }, []);
+    
+    const relNewsData = relatedNews.map((item,index)=>{
+        return (
+            <div key={index} className="col-md-4">
+                            <div className="sn-img">
+                                <img src={item.urlToImage} alt="new2" />
+                                <div className="sn-title">
+                                <Link to={{ 
+                        pathname: `/news-details/${item.title}`,
+                    }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link> 
+                                </div>
+                            </div>
+                        </div>
+        )
+    })
+
   return (
       <>
       <Header />
@@ -54,14 +80,7 @@ const singlepage = (props) => {
                 <div className="sn-related">
                     <h2>Related News</h2>
                     <div className="row sn-slider">
-                        <div className="col-md-4">
-                            <div className="sn-img">
-                                <img src={news2} alt="new2" />
-                                <div className="sn-title">
-                                    <a href="">Interdum et fames ac ante</a>
-                                </div>
-                            </div>
-                        </div>
+                        {relatedNews && relNewsData}
                         <div className="col-md-4">
                             <div className="sn-img">
                                 <img src={news3} alt="new" />
