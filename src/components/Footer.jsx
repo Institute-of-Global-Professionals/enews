@@ -10,7 +10,7 @@ const Footer = () => {
                             <h3 className="title">Get in Touch</h3>
                             <div className="contact-info">
                                 <p><i className="fa fa-map-marker"></i>Sugandha Cinema hall, 2nd floor.1280, SS khaled road, kajirdhawri,chattogram</p>
-                                <p><i className="fa fa-envelope"></i>info@example.com</p>
+                                <p><i className="fa fa-envelope"></i>kowshikiam@gmail.com</p>
                                 <p><i className="fa fa-phone"></i>+8801843046324</p>
                                 <div className="social">
                                     <a href="/#"><i className="fab fa-twitter"></i></a>

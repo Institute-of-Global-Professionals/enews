@@ -48,11 +48,11 @@ const contactUs = () => {
                             <div className="contact-info">
                                 <h3>Get in Touch</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus.
+                                    Want to get in touch? We'd love to hear from you.Here's how you can reach us...
                                 </p>
-                                <h4><i className="fa fa-map-marker"></i>123 News Street, NY, USA</h4>
+                                <h4><i className="fa fa-map-marker"></i>Sugandha Cinema hall, 2nd floor.1280, SS khaled road, kajirdhawri,chattogram</h4>
                                 <h4><i className="fa fa-envelope"></i>info@example.com</h4>
-                                <h4><i className="fa fa-phone"></i>+123-456-7890</h4>
+                                <h4><i className="fa fa-phone"></i>+8801843046324</h4>
                                 <div className="social">
                                     <a href="/#"><i className="fab fa-twitter"></i></a>
                                     <a href="/#"><i className="fab fa-facebook-f"></i></a>
