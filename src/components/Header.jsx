@@ -10,7 +10,7 @@ const Header = () => {
         <div className="row">
             <div className="col-md-6">
                 <div className="tb-contact">
-                    <p><i className="fas fa-envelope"></i>kowshikiam@gmail.com</p>
+                    <p><i className="fas fa-envelope"></i>info@eduigp.com</p>
                     <p><i className="fas fa-phone-alt"></i>+8801843046324</p>
                 </div>
             </div>

@@ -51,7 +51,7 @@ const contactUs = () => {
                                     Want to get in touch? We'd love to hear from you.Here's how you can reach us...
                                 </p>
                                 <h4><i className="fa fa-map-marker"></i>Sugandha Cinema hall, 2nd floor.1280, SS khaled road, kajirdhawri,chattogram</h4>
-                                <h4><i className="fa fa-envelope"></i>kowshikiam@gmail.com</h4>
+                                <h4><i className="fa fa-envelope"></i>info@eduigp.com</h4>
                                 <h4><i className="fa fa-phone"></i>+8801843046324</h4>
                                 <div className="social">
                                     <a href="/#"><i className="fab fa-twitter"></i></a>
