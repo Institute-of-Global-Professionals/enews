@@ -23,14 +23,31 @@ const singlepage = (props) => {
     // console.log(title, content, image);
 
     const [relatedNews, setRelatedNews] = useState([]);
+    const [categoryNews, setCategoryNews] = useState([]);
+    const [featuresNews, setfeaturesNews] = useState([]);
+
     useEffect(()=>{
         const relNews = async() => {
           const result = await axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=22768fd83d4f42788e575d9be6fc3fdd') ;
           setRelatedNews(result.data.articles); 
           console.log(result.data);
         }
+
+        const catNews = async () => {
+            const result =await axios.get('https://newsapi.org/v2/everything?q=apple&from=2022-05-30&to=2022-05-30&sortBy=popularity&apiKey=400fb535b895424d88034ff83db77ddf');
+            setCategoryNews(result.data.articles);
+        }
+
+        const fetNews = async () => {
+            const result = await axios.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=22768fd83d4f42788e575d9be6fc3fdd')
+            setfeaturesNews(result.data.articles);
+        }
         relNews();
+        catNews();
+        fetNews();
     }, []);
+
+    
     
     const relNewsData = relatedNews.map((item, index)=>{
         return (
@@ -39,11 +56,41 @@ const singlepage = (props) => {
                                 <img src={item.urlToImage} alt="new2" />
                                 <div className="sn-title">
                                 <Link to={{ 
-                        pathname: `/news-details/${item.title}`,
-                        }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link> 
+                            pathname: `/news-details/${item.title}`,
+                            }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link> 
                                 </div>
                             </div>
                         </div>
+        )
+    })
+
+    const categoryNewsData = categoryNews.map((item,index) => {
+        return (
+            <div key={index} className="nl-item">
+                                <div  className="nl-img">
+                                    <img src={item.urlToImage} alt="new"/>
+                                </div>
+                                <div className="nl-title">
+                                <Link to={{ 
+                            pathname: `/news-details/${item.title}`,
+                            }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link> 
+                                </div>
+                            </div>
+        )
+    }) 
+
+    const featuresNewsData = featuresNews.map((item,index) =>{
+        return (
+            <div key={index} className="tn-news">
+            <div className="tn-img">
+                <img src={item.urlToImage} alt="new"/>
+            </div>
+            <div className="tn-title">
+            <Link to={{ 
+                            pathname: `/news-details/${item.title}`,
+                            }} state={{ title: item.title, content: item.content, image: item.urlToImage, publishDate: item.publishedAt}} >{item.title}</Link> 
+            </div>
+        </div>
         )
     })
 
@@ -82,30 +129,6 @@ const singlepage = (props) => {
                     <h2>Related News</h2>
                     <div className="row sn-slider">
                         {relatedNews && relNewsData}
-                        <div className="col-md-4">
-                            <div className="sn-img">
-                                <img src={news3} alt="new" />
-                                <div className="sn-title">
-                                    <a href="/#">Interdum et fames ac ante</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="sn-img">
-                                <img src={news4} alt="new"/>
-                                <div className="sn-title">
-                                    <a href="/#">Interdum et fames ac ante</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="sn-img">
-                                <img src={news5} alt="new" />
-                                <div className="sn-title">
-                                    <a href="/#">Interdum et fames ac ante</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -115,46 +138,7 @@ const singlepage = (props) => {
                     <div className="sidebar-widget">
                         <h2 className="sw-title">In This Category</h2>
                         <div className="news-list">
-                            <div className="nl-item">
-                                <div className="nl-img">
-                                    <img src={news6} alt="new"/>
-                                </div>
-                                <div className="nl-title">
-                                    <a href="/#">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                </div>
-                            </div>
-                            <div className="nl-item">
-                                <div className="nl-img">
-                                    <img src={news7} alt="new"/>
-                                </div>
-                                <div className="nl-title">
-                                    <a href="/#">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                </div>
-                            </div>
-                            <div className="nl-item">
-                                <div className="nl-img">
-                                    <img src={news8} alt="new"/>
-                                </div>
-                                <div className="nl-title">
-                                    <a href="/#">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                </div>
-                            </div>
-                            <div className="nl-item">
-                                <div className="nl-img">
-                                    <img src={news9} alt="new"/>
-                                </div>
-                                <div className="nl-title">
-                                    <a href="/#">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                </div>
-                            </div>
-                            <div className="nl-item">
-                                <div className="nl-img">
-                                    <img src={news10} alt="new"/>
-                                </div>
-                                <div className="nl-title">
-                                    <a href="/#">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                </div>
-                            </div>
+                            {categoryNews && categoryNewsData}
                         </div>
                     </div>
                     
@@ -180,46 +164,8 @@ const singlepage = (props) => {
 
                             <div className="tab-content">
                                 <div id="featured" className="container tab-pane active">
-                                    <div className="tn-news">
-                                        <div className="tn-img">
-                                            <img src={news2} alt="new"/>
-                                        </div>
-                                        <div className="tn-title">
-                                            <a href="/#">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                        </div>
-                                    </div>
-                                    <div className="tn-news">
-                                        <div className="tn-img">
-                                            <img src={news3} alt="new"/>
-                                        </div>
-                                        <div className="tn-title">
-                                            <a href="/#">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                        </div>
-                                    </div>
-                                    <div className="tn-news">
-                                        <div className="tn-img">
-                                            <img src={news4} alt="new" />
-                                        </div>
-                                        <div className="tn-title">
-                                            <a href="/#">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                        </div>
-                                    </div>
-                                    <div className="tn-news">
-                                        <div className="tn-img">
-                                            <img src={news5} alt="new" />
-                                        </div>
-                                        <div className="tn-title">
-                                            <a href="/#">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                        </div>
-                                    </div>
-                                    <div className="tn-news">
-                                        <div className="tn-img">
-                                            <img src={news10} alt="new" />
-                                        </div>
-                                        <div className="tn-title">
-                                            <a href="/#">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                        </div>
-                                    </div>
+                                    {featuresNews && featuresNewsData}
+                                  
                                 </div>
                                 <div id="popular" className="container tab-pane fade">
                                     <div className="tn-news">
@@ -315,26 +261,9 @@ const singlepage = (props) => {
                         </div>
                     </div>
 
-                    <div className="sidebar-widget">
-                        <h2 className="sw-title">News Category</h2>
-                        <div className="category">
-                            <ul>
-                                <li><a href="/#">National</a><span>(98)</span></li>
-                                <li><a href="/#">International</a><span>(87)</span></li>
-                                <li><a href="/#">Economics</a><span>(76)</span></li>
-                                <li><a href="/#">Politics</a><span>(65)</span></li>
-                                <li><a href="/#">Lifestyle</a><span>(54)</span></li>
-                                <li><a href="/#">Technology</a><span>(43)</span></li>
-                                <li><a href="/#">Trades</a><span>(32)</span></li>
-                            </ul>
-                        </div>
-                    </div>
+                    
 
-                    <div className="sidebar-widget">
-                        <div className="image">
-                            <a href="https://htmlcodex.com"><img src={ads2} alt="Image"/></a>
-                        </div>
-                    </div>
+                    
                     
                     <div className="sidebar-widget">
                         <h2 className="sw-title">Tags Cloud</h2>
