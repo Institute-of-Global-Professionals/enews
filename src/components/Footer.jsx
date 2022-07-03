@@ -27,11 +27,11 @@ const Footer = () => {
                         <div className="footer-widget">
                             <h3 className="title">Useful Links</h3>
                             <ul>
-                                <li><a href="/#">Links 1</a></li>
-                                <li><a href="/#">Links 2</a></li>
-                                <li><a href="/#">Links 3</a></li>
-                                <li><a href="/#">Links 4</a></li>
-                                <li><a href="/#">Links 5</a></li>
+                                <li><a href="/#">About Us</a></li>
+                                <li><a href="/#">Contact Us</a></li>
+                                <li><a href="/#">Our Services</a></li>
+                                <li><a href="/#">Privacy Policy</a></li>
+                                <li><a href="/#">Terms & Conditions</a></li>
                             </ul>
                         </div>
                     </div>
@@ -40,11 +40,11 @@ const Footer = () => {
                         <div className="footer-widget">
                             <h3 className="title">Quick Links</h3>
                             <ul>
-                                <li><a href="/#">Quick Links 1</a></li>
-                                <li><a href="/#">Quick Links 2</a></li>
-                                <li><a href="/#">Quick Links 3</a></li>
-                                <li><a href="/#">Quick Links 4</a></li>
-                                <li><a href="/#">Quick Links 5</a></li>
+                                <li><a href="/#">About Us</a></li>
+                                <li><a href="/#">Contact Us</a></li>
+                                <li><a href="/#">Our Services</a></li>
+                                <li><a href="/#">Privacy Policy</a></li>
+                                <li><a href="/#">Terms & Conditions</a></li>
                             </ul>
                         </div>
                     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../vendor/img/logo.png';
 import ads from '../vendor/img/ads-1.jpg';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -63,16 +64,16 @@ const Header = () => {
 
             <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div className="navbar-nav mr-auto">
-                    <a href="/" className="nav-item nav-link active">Home</a>
-                    <div className="nav-item dropdown">
+                    <NavLink to="/" className="nav-item nav-link">Home</NavLink>
+                    {/* <div className="nav-item dropdown">
                                 <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
                                 <div className="dropdown-menu">
                                     <a href="#" className="dropdown-item">Sub Item 1</a>
                                     <a href="#" className="dropdown-item">Sub Item 2</a>
                                 </div>
-                            </div>
+                            </div> */}
                     {/* <a href="/news-details" className="nav-item nav-link">Single Page</a> */}
-                    <a href="/Contact-Us" className="nav-item nav-link">Contact Us</a>
+                    <NavLink to="/Contact-Us" className="nav-item nav-link">Contact Us</NavLink>
                 </div>
                 <div className="social ml-auto">
                     <a href="/#"><i className="fab fa-twitter"></i></a>
