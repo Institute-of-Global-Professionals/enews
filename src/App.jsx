@@ -15,9 +15,9 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Contact-Us" element={<ContactUs />} />
-        <Route path="/news-details/:type" element={<Singlepage />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/Contact-Us" element={<ContactUs />} />
+        <Route exact path="/news-details/:type" element={<Singlepage />} />
       </Routes>
     </BrowserRouter>
   </>
